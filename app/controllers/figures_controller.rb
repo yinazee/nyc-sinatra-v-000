@@ -1,3 +1,3 @@
-class ApplicationController < Sinatra::Base
+class FiguresController < Sinatra::Base
 
 end
