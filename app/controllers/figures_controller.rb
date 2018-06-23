@@ -1,4 +1,4 @@
-class FiguresController < Sinatra::Base
+class FiguresController < ApplicationController
 
   get '/figures' do
     @figures = Figure.all
@@ -6,6 +6,12 @@ class FiguresController < Sinatra::Base
   end
 
   get '/figures/new' do
+
     erb :'figures/new'
+  end
+
+  post '/figures' do
+    @figure = Figure.create(params[:title])
+    redirect :'/figures'
   end
 end
